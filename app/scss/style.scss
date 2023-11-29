@@ -1,0 +1,604 @@
+@import 'node_modules/slick-carousel/slick/slick';
+@import 'node_modules/bootstrap/dist/css/bootstrap';
+@import 'node_modules/magnific-popup/dist/magnific-popup';
+@import 'node_modules/treeflex/dist/css/treeflex';
+@import 'node_modules/reset.css/reset';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import '_fonts';
+
+
+/**********************
+    **********************
+        VARIABLES
+    **********************
+**********************/
+$black: #000;
+$white: #fff;
+
+$bg_dark: #F8F8F8;
+
+$title: #372821;
+$text: #372821;
+$secondary_text: #969696;
+
+$nav_bg_color: #F2EFEB;
+$cart_items_color: #FF8989;
+
+$search_color: #888;
+
+$active: #372821;
+$link: #372821;
+$main: #372821;
+
+$font_Gp: 'Gotham Pro';
+$font_Mt: 'Montserrat', sans-serif;
+
+
+$global_font_size: 16;
+
+/**********************
+    **********************
+        MIXINS
+    **********************
+**********************/
+@mixin fontGp($font_size, $font_weight, $line_height, $font_color) {
+    font-family: $font_Gp;
+    font-size: calc($font_size / $global_font_size) + rem;
+    font-weight: $font_weight;
+    line-height: calc($line_height / $global_font_size) + rem;
+    color: $font_color;
+}
+
+@mixin fontMt($font_size, $font_weight, $line_height, $font_color) {
+    font-family: $font_Gp;
+    font-size: calc($font_size / $global_font_size) + rem;
+    font-weight: $font_weight;
+    line-height: calc($line_height / $global_font_size) + rem;
+    color: $font_color;
+}
+
+@mixin pseudo($url, $width, $height) {
+    content: '';
+    position: absolute;
+    background-image: $url;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: calc($width / $global_font_size) + rem;
+    height: calc($height / $global_font_size) + rem;
+}
+
+
+@mixin pseudoItem($width, $height, $bgc) {
+    content: '';
+    position: absolute;
+    width: calc($width / $global_font_size) + rem;
+    height: calc($height / $global_font_size) + rem;
+    background: $bgc;
+}
+
+/**********************
+    **********************
+        TEMPLATES
+    **********************
+**********************/
+
+/* Titles */
+%title {
+    @include fontGp(59, 900, 83.426, $title);
+}
+
+%sub_titleh2 {
+    @include fontGp(45, 900, 63.63, $title);
+}
+
+%sub_titleh3 {
+    @include fontGp(45, 900, 63.63, $title);
+}
+
+%sub_titleh4 {
+    @include fontGp(20, 700, 32.78, $text);
+}
+
+h1 {
+    @extend %title;
+}
+
+h2 {
+    @extend %sub_titleh2;
+}
+
+h3 {}
+
+h4 {
+    @extend %sub_titleh4;
+}
+
+/* LINES */
+%line_right {
+    position: relative;
+
+    &::after {
+        @include pseudoItem(67, 2, $main);
+        right: -5.625rem;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+%line_top {
+    position: relative;
+
+    &::before {
+        @include pseudoItem(2, 67, $main);
+        top: -5.875rem;
+        left: 10%;
+    }
+}
+
+/* BTN */
+%btn{
+    border: 1px solid $main;
+    padding: 17px 64px;
+}
+/**********************
+    **********************
+        GLOBAl
+    **********************
+**********************/
+html {
+    overflow-x: hidden;
+    font-size: $global_font_size + px;
+    background: #000;
+}
+
+body {
+    @include fontGp(18, 400, 39.042, $text);
+    background: $white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: 3.125rem;
+}
+
+.header.sticky {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.container {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: $link;
+}
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+p {
+    @include fontGp(18, 400, 39.042, $black);
+}
+
+.burger__btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    & span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: $white;
+        margin-bottom: 5px;
+        border-radius: 30px;
+    }
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+
+
+    input,
+    textarea {
+        width: 100%;
+        border: none;
+        outline: none;
+        background: $bg_dark;
+        height: 55px;
+        border-radius: 20px;
+        border: 1px solid #F4F4F4;
+        padding: 10px;
+    }
+
+    textarea {
+        height: 126px;
+        border: 1px solid #F4F4F4;
+    }
+}
+
+.logo {
+    img {}
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+    filter: blur(5px);
+    transition: 1s all;
+
+    &.show {
+        transform: translate(0);
+        opacity: 1;
+        filter: blur(0px);
+    }
+}
+
+/**********************
+    **********************
+     HEADER
+    **********************
+**********************/
+.header {
+    padding-bottom: 46px;
+
+    .menu {
+        background: $nav_bg_color;
+
+        /* MENU TOP starts */
+        &__top {
+            padding: 17px 0;
+
+            &-list {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                &>div {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 97px;
+                }
+
+                .cart a {
+                    position: relative;
+                }
+
+                .search {
+                    display: flex;
+                    align-items: center;
+
+                    &>div {
+                        display: flex;
+                        align-items: center;
+                        gap: 20px;
+                    }
+                }
+
+                #cart-items {
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    @include fontMt(8, 400, 16, $white);
+                    background: $cart_items_color;
+                    width: 13px;
+                    height: 13px;
+                    text-align: center;
+                    border-radius: 50%;
+                    right: -20px;
+                    top: 50%;
+                    transform: translateY(-85%);
+                }
+
+                #search-icon {
+                    position: relative;
+                    background-image: url('../images/search.svg');
+                    background-position: center;
+                    background-size: contain;
+                    width: 20px;
+                    height: 20px;
+                }
+
+                #search {
+                    @include fontMt(12, 300, 16, $search_color);
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid $search_color;
+                    max-width: 136px;
+                }
+
+                .menu__phone-number {
+                    @include fontMt(18, 400, 16, $text);
+                    position: relative;
+                    padding-left: 30px;
+
+                    &::before {
+                        @include pseudo(url('../images/phone.svg'), 16, 16);
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+        }
+
+        /* MENU TOP ends */
+
+        /* MENU LIST starts */
+        &__list {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+
+            a {
+                @include fontMt(18, 400, 16, $text);
+            }
+
+            &-item {
+                position: relative;
+                transition: .4s all;
+
+                &:hover {
+                    background: $white;
+                    filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.10));
+
+                    & a:after {
+                        transform: translateY(-50%) rotate(90deg);
+                    }
+
+                    & ul {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                & ul {
+                    opacity: 0;
+                    visibility: hidden;
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    background: $white;
+                    transition: .4s all;
+
+                    a {
+                        display: block;
+                        padding: 18px 37px;
+
+                        &:hover {
+                            font-weight: 700;
+                            background: $bg_dark;
+                        }
+                    }
+
+                }
+            }
+
+            &-link {
+                display: block;
+                padding: 20px 30px;
+                position: relative;
+                transition: .4s all;
+
+                &:has(+ul) {
+                    padding-right: 60px;
+                }
+
+                &:has(+ul):after {
+                    @include pseudoItem(11, 2, $main);
+                    right: 25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    transition: .4s all;
+                }
+            }
+        }
+
+        /* MENU LIST ends */
+
+    }
+}
+
+/* Burger Navbar */
+html.modal__open {
+    overflow: hidden;
+}
+
+.burger__navbar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 65px;
+    bottom: 0;
+    background: $main;
+    overflow-y: scroll;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+/* End of header*/
+
+/**********************
+    **********************
+       HERO
+    **********************
+**********************/
+.hero {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        max-width: 590px;
+
+        @extend %line_top;
+
+        span {
+            @extend %line_right;
+        }
+    }
+}
+
+
+/**********************
+    **********************
+       FOOTER
+    **********************
+**********************/
+.footer {
+    color: $white;
+    border-top: 1px solid #DEDEDE;
+    padding-top: 53px;
+    padding-bottom: 50px;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .socials {
+        display: flex;
+        gap: 35px;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 21px;
+            border: 1px solid $main;
+
+            position: relative;
+
+            &::before {
+                @include pseudoItem(28, 1, $white);
+                bottom: -1px;
+                left: 20%;
+            }
+        }
+    }
+
+    &__title {
+        @extend %line_right;
+    }
+
+    &__subtitle {
+        @include fontGp(20, 400, 32.78, $text);
+        letter-spacing: 0.0375rem;
+        max-width: 277px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+
+        &-cover {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 22px;
+
+            p {
+                padding-bottom: 15px;
+            }
+        }
+    }
+
+
+    &__nav-cover {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h4 {
+            letter-spacing: 0.0375rem;
+        }
+
+        &>ul {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &>div {
+                display: flex;
+                justify-content: space-between;
+                gap: 20px;
+
+                a {
+                    @include fontMt(18, 400, 16, $secondary_text);
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 27px;
+        border-top: 1px solid #DEDEDE;
+
+        a {
+            @include fontMt(16, 400, 16, $secondary_text);
+        }
+    }
+}
+
+/**********************
+    **********************
+       MEDIA QUERIES
+    **********************
+**********************/
+
+@media (max-width: 1604px) {
+    html {
+        font-size: $global_font_size - 1 + px;
+    }
+}
+
+@media (max-width: 1527px) {
+    html {
+        font-size: $global_font_size - 2 + px;
+    }
+}
+
+@media (max-width: 1480px) {
+    html {
+        font-size: $global_font_size - 3 + px;
+    }
+}
