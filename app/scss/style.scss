@@ -30,6 +30,8 @@ $active: #372821;
 $link: #372821;
 $main: #372821;
 
+$btn_bg: #f2f2f2;
+
 $font_Gp: 'Gotham Pro';
 $font_Mt: 'Montserrat', sans-serif;
 
@@ -136,10 +138,91 @@ h4 {
 }
 
 /* BTN */
-%btn{
-    border: 1px solid $main;
+%btn {
+    position: relative;
+    z-index: 0;
+
+    border-radius: 0;
     padding: 17px 64px;
+    background: transparent;
+
+    &::before {
+        @include pseudoItem(0, 0, transparent);
+        width: 100%;
+        height: 100%;
+
+        border-top: 1px solid $main;
+        border-right: 1px solid $main;
+        border-left: 1px solid $main;
+        border-bottom: 1px solid $main;
+
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        transition: .4s all;
+
+        clip-path: polygon(0 0, 29% 0, 35% 0%, 100% 0, 100% 10%, 100% 28%, 100% 100%, 25% 100%, 20% 93%, 11% 93%, 6% 100%, 0 100%);
+
+
+    }
+
+    &::after {
+        @include pseudoItem(0, 0, $btn_bg);
+        width: 100%;
+        height: 100%;
+        right: -0.625rem;
+        bottom: -0.625rem;
+        z-index: -1;
+        transition: .4s all;
+    }
+
+    .btn__arrow {
+        position: absolute;
+        background-image: url('../images/arrow-btn-dark.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 51px;
+        width: 7px;
+        bottom: -22px;
+        left: 29px;
+        z-index: 1;
+
+        transition: 1s all;
+    }
+
+    &:hover {
+        border: 1px solid transparent;
+
+        .btn__arrow {
+            animation: arrow 1.5s ease-in-out infinite;
+        }
+
+        &::after {
+            right: 0;
+            bottom: 0;
+        }
+    }
 }
+
+@keyframes arrow {
+    0% {
+        bottom: -22px;
+    }
+
+    50% {
+        bottom: -5px;
+    }
+
+    100% {
+        bottom: -22px;
+    }
+}
+
+.btn {
+    @extend %btn;
+}
+
 /**********************
     **********************
         GLOBAl

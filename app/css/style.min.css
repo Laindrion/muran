@@ -13277,6 +13277,98 @@ h4 {
 }
 
 /* BTN */
+.btn {
+  position: relative;
+  z-index: 0;
+  border-radius: 0;
+  padding: 17px 64px;
+  background: transparent;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  border-top: 1px solid #372821;
+  border-right: 1px solid #372821;
+  border-left: 1px solid #372821;
+  border-bottom: 1px solid #372821;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  -webkit-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all;
+  -webkit-clip-path: polygon(0 0, 29% 0, 35% 0%, 100% 0, 100% 10%, 100% 28%, 100% 100%, 25% 100%, 20% 93%, 11% 93%, 6% 100%, 0 100%);
+  clip-path: polygon(0 0, 29% 0, 35% 0%, 100% 0, 100% 10%, 100% 28%, 100% 100%, 25% 100%, 20% 93%, 11% 93%, 6% 100%, 0 100%);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 0rem;
+  height: 0rem;
+  background: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  right: -0.625rem;
+  bottom: -0.625rem;
+  z-index: -1;
+  -webkit-transition: 0.4s all;
+  -o-transition: 0.4s all;
+  transition: 0.4s all;
+}
+.btn .btn__arrow {
+  position: absolute;
+  background-image: url("../images/arrow-btn-dark.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 51px;
+  width: 7px;
+  bottom: -22px;
+  left: 29px;
+  z-index: 1;
+  -webkit-transition: 1s all;
+  -o-transition: 1s all;
+  transition: 1s all;
+}
+.btn:hover {
+  border: 1px solid transparent;
+}
+.btn:hover .btn__arrow {
+  -webkit-animation: arrow 1.5s ease-in-out infinite;
+  animation: arrow 1.5s ease-in-out infinite;
+}
+.btn:hover::after {
+  right: 0;
+  bottom: 0;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    bottom: -22px;
+  }
+  50% {
+    bottom: -5px;
+  }
+  100% {
+    bottom: -22px;
+  }
+}
+@keyframes arrow {
+  0% {
+    bottom: -22px;
+  }
+  50% {
+    bottom: -5px;
+  }
+  100% {
+    bottom: -22px;
+  }
+}
 /**********************
     **********************
         GLOBAl
