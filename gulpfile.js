@@ -105,4 +105,4 @@ exports.browsersync = browsersync;
 exports.watching = watching;
 
 exports.build = series(cleanDist, building);
-exports.default = parallel(styles, fonts, images, scripts, browsersync, pages, watching)
+exports.default = parallel(styles, images, scripts, browsersync, pages, watching)
