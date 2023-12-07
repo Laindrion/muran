@@ -30,6 +30,8 @@ $active: #372821;
 $link: #372821;
 $main: #372821;
 
+$btn_font_color: #232323;
+
 $btn_bg: #f2f2f2;
 
 $font_Gp: 'Gotham Pro';
@@ -145,6 +147,7 @@ h4 {
     border-radius: 0;
     padding: 17px 64px;
     background: transparent;
+    @include fontMt(18, 400, 16, $btn_font_color);
 
     &::before {
         @include pseudoItem(0, 0, transparent);
@@ -232,6 +235,12 @@ h4 {
         @extend %line_top;
 
         @extend %line_right;
+    }
+
+    &>&-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
     &>div {
@@ -599,7 +608,12 @@ html.modal__open {
             @include pseudo(url('../images/arrow-btn-dark.svg'), 21, 156);
             transform: translateY(-50%) rotate(90deg);
             bottom: -130px;
-            left: 12%;
+            left: 23%;
+        }
+
+        &>div:not(.hero__img){
+            width: auto;
+            margin-left: auto;
         }
 
         &>div {
@@ -622,8 +636,9 @@ html.modal__open {
 
     &__img {
         height: 664px;
+        margin: 0 0 0 auto;
         margin-left: -149px;
-
+        width: 60%;
         img {
             height: 100%;
         }
@@ -758,9 +773,15 @@ $item_bg: #F3F0EC;
 **********************/
 .history {
     position: relative;
+    padding-bottom: 150px;
+
+    &__wrapper {
+        display: flex;
+    }
+
 
     &__img {
-        position: absolute;
+        position: relative;
         left: 0;
         top: 0;
     }
@@ -768,6 +789,76 @@ $item_bg: #F3F0EC;
     .section__top {
         justify-content: flex-end;
         margin-top: 90px;
+    }
+
+    &__title {
+        @extend %line_right;
+        @extend %line_top;
+        z-index: 0;
+
+        span {
+            display: block;
+            position: absolute;
+            width: 5.0625rem;
+            height: 5.0625rem;
+            background: $btn_bg;
+            z-index: -1;
+            top: -14%;
+            left: -6%;
+        }
+    }
+
+    &__cover {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        background: $white;
+        padding: 73px 96px 45px 70px;
+
+        p {
+            margin-bottom: 25px;
+        }
+    }
+
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        &>div {
+            display: flex;
+            align-items: center;
+            gap: 70px;
+
+            span {
+                @include fontMt(18, 400, 37.962, $black);
+            }
+        }
+
+        .play__btn {
+            width: 57px;
+            height: 57px;
+            border: 1px solid $main;
+            position: relative;
+
+            &::before {
+                @include pseudo(url('../images/play.svg'), 15, 15);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &::after {
+                @include pseudoItem(47, 1, $main);
+                right: -2.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+        }
     }
 }
 

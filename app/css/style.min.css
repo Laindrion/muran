@@ -13247,10 +13247,10 @@ h4 {
 }
 
 /* LINES */
-.footer__title, .hero__title span, .section__top h1 {
+.footer__title, .history__title, .hero__title span, .section__top h1 {
   position: relative;
 }
-.footer__title::after, .hero__title span::after, .section__top h1::after {
+.footer__title::after, .history__title::after, .hero__title span::after, .section__top h1::after {
   content: "";
   position: absolute;
   width: 10.1875rem;
@@ -13263,10 +13263,10 @@ h4 {
   transform: translateY(-50%);
 }
 
-.hero__title, .section__top h1 {
+.history__title, .hero__title, .section__top h1 {
   position: relative;
 }
-.hero__title::before, .section__top h1::before {
+.history__title::before, .hero__title::before, .section__top h1::before {
   content: "";
   position: absolute;
   width: 0.125rem;
@@ -13283,6 +13283,11 @@ h4 {
   border-radius: 0;
   padding: 17px 64px;
   background: transparent;
+  font-family: "Gotham Pro";
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #232323;
 }
 .btn::before {
   content: "";
@@ -13379,6 +13384,16 @@ h4 {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+.section__top > .section__top-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
 }
 .section__top > div {
   display: -webkit-box;
@@ -13831,7 +13846,11 @@ html.modal__open {
   -ms-transform: translateY(-50%) rotate(90deg);
   transform: translateY(-50%) rotate(90deg);
   bottom: -130px;
-  left: 12%;
+  left: 23%;
+}
+.hero__wrapper > div:not(.hero__img) {
+  width: auto;
+  margin-left: auto;
 }
 .hero__wrapper > div {
   display: -webkit-box;
@@ -13851,7 +13870,9 @@ html.modal__open {
 }
 .hero__img {
   height: 664px;
+  margin: 0 0 0 auto;
   margin-left: -149px;
+  width: 60%;
 }
 .hero__img img {
   height: 100%;
@@ -14001,9 +14022,15 @@ html.modal__open {
 **********************/
 .history {
   position: relative;
+  padding-bottom: 150px;
+}
+.history__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .history__img {
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
 }
@@ -14012,6 +14039,97 @@ html.modal__open {
   -ms-flex-pack: end;
   justify-content: flex-end;
   margin-top: 90px;
+}
+.history__title {
+  z-index: 0;
+}
+.history__title span {
+  display: block;
+  position: absolute;
+  width: 5.0625rem;
+  height: 5.0625rem;
+  background: #f2f2f2;
+  z-index: -1;
+  top: -14%;
+  left: -6%;
+}
+.history__cover {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 32px;
+  background: #fff;
+  padding: 73px 96px 45px 70px;
+}
+.history__cover p {
+  margin-bottom: 25px;
+}
+.history__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+}
+.history__inner > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 70px;
+}
+.history__inner > div span {
+  font-family: "Gotham Pro";
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2.372625rem;
+  color: #000;
+}
+.history__inner .play__btn {
+  width: 57px;
+  height: 57px;
+  border: 1px solid #372821;
+  position: relative;
+}
+.history__inner .play__btn::before {
+  content: "";
+  position: absolute;
+  background-image: url("../images/play.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 0.9375rem;
+  height: 0.9375rem;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.history__inner .play__btn::after {
+  content: "";
+  position: absolute;
+  width: 2.9375rem;
+  height: 0.0625rem;
+  background: #372821;
+  right: -2.5rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 /**********************
