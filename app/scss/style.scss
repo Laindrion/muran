@@ -85,6 +85,50 @@ $global_font_size: 16;
         TEMPLATES
     **********************
 **********************/
+.section__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        @extend %line_top;
+
+        @extend %line_right;
+    }
+
+    &>&-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &>div {
+        display: flex;
+        gap: 3.1875rem;
+
+        @include fontGp(20, 700, 28.28, $text);
+    }
+
+
+    &-title {
+        position: relative;
+        z-index: 0;
+
+        &::after {
+            @include pseudoItem(61, 61, $btn_bg);
+            left: 0;
+            top: -1.6875rem;
+            z-index: -1;
+        }
+
+        &::before {
+            @include pseudoItem(31, 31, $btn_bg);
+            left: -0.625rem;
+            bottom: -0.625rem;
+            z-index: -1;
+        }
+    }
+}
 
 /* Titles */
 %title {
@@ -133,10 +177,15 @@ h4 {
     position: relative;
 
     &::before {
+
         @include pseudoItem(2, 67, $main);
         top: -5.875rem;
         left: 10%;
     }
+}
+
+%square__arrow {
+    @include pseudo(url('../images/square-arrows.svg'), 67, 135);
 }
 
 /* BTN */
@@ -173,6 +222,7 @@ h4 {
         @include pseudoItem(0, 0, $btn_bg);
         width: 100%;
         height: 100%;
+
         right: -0.625rem;
         bottom: -0.625rem;
         z-index: -1;
@@ -224,51 +274,6 @@ h4 {
 
 .btn {
     @extend %btn;
-}
-
-.section__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    h1 {
-        @extend %line_top;
-
-        @extend %line_right;
-    }
-
-    &>&-inner {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    &>div {
-        display: flex;
-        gap: 3.1875rem;
-
-        @include fontGp(20, 700, 28.28, $text);
-    }
-
-
-    &-title {
-        position: relative;
-        z-index: 0;
-
-        &::after {
-            @include pseudoItem(61, 61, $btn_bg);
-            left: 0;
-            top: -1.6875rem;
-            z-index: -1;
-        }
-
-        &::before {
-            @include pseudoItem(31, 31, $btn_bg);
-            left: -0.625rem;
-            bottom: -0.625rem;
-            z-index: -1;
-        }
-    }
 }
 
 
@@ -611,7 +616,7 @@ html.modal__open {
             left: 23%;
         }
 
-        &>div:not(.hero__img){
+        &>div:not(.hero__img) {
             width: auto;
             margin-left: auto;
         }
@@ -639,6 +644,7 @@ html.modal__open {
         margin: 0 0 0 auto;
         margin-left: -149px;
         width: 60%;
+
         img {
             height: 100%;
         }
@@ -660,10 +666,9 @@ $item_bg: #F3F0EC;
         position: relative;
 
         &::before {
-            @include pseudo(url('../images/square-arrows.svg'), 67, 135);
+            @extend %square__arrow;
             bottom: -15%;
             left: -15%;
-
         }
     }
 
@@ -777,6 +782,12 @@ $item_bg: #F3F0EC;
 
     &__wrapper {
         display: flex;
+
+        &::after {
+            @extend %square__arrow;
+            right: 0;
+            bottom: 0;
+        }
     }
 
 
@@ -784,6 +795,12 @@ $item_bg: #F3F0EC;
         position: relative;
         left: 0;
         top: 0;
+
+        &::before {
+            @include pseudo(url('../images/section-square.svg'), 41, 41);
+            top: -15px;
+            right: -15px;
+        }
     }
 
     .section__top {
