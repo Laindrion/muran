@@ -33,6 +33,7 @@ $main: #372821;
 $btn_font_color: #232323;
 
 $btn_bg: #f2f2f2;
+$border_color: #EDEDED;
 
 $font_Gp: 'Gotham Pro';
 $font_Mt: 'Montserrat', sans-serif;
@@ -689,7 +690,7 @@ $item_bg: #F3F0EC;
         align-items: flex-start;
         gap: 31px;
         position: relative;
-        border: 0.4px solid #EDEDED;
+        border: 0.4px solid $border_color;
         padding: 28px 24px 0 35px;
         justify-content: space-between;
 
@@ -780,13 +781,17 @@ $item_bg: #F3F0EC;
     position: relative;
     padding-bottom: 150px;
 
+    .container {
+        position: relative;
+    }
+
     &__wrapper {
         display: flex;
 
         &::after {
             @extend %square__arrow;
-            right: 0;
-            bottom: 0;
+            right: 103px;
+            bottom: 103px;
         }
     }
 
@@ -795,22 +800,37 @@ $item_bg: #F3F0EC;
         position: relative;
         left: 0;
         top: 0;
+        width: 60%;
+        height: 604px;
 
         &::before {
             @include pseudo(url('../images/section-square.svg'), 41, 41);
             top: -15px;
             right: -15px;
         }
+
+        img {
+            height: 100%;
+        }
     }
 
     .section__top {
+        position: absolute;
         justify-content: flex-end;
         margin-top: 90px;
+        right: 0;
+        top: 25%;
     }
 
     &__title {
         @extend %line_right;
         @extend %line_top;
+
+        &::before {
+            height: 10.1875rem;
+            top: -11.875rem;
+        }
+
         z-index: 0;
 
         span {
@@ -832,6 +852,10 @@ $item_bg: #F3F0EC;
         gap: 32px;
         background: $white;
         padding: 73px 96px 45px 70px;
+        max-width: 953px;
+        position: absolute;
+        right: 20%;
+        bottom: 10%;
 
         p {
             margin-bottom: 25px;
@@ -875,6 +899,175 @@ $item_bg: #F3F0EC;
                 transform: translateY(-50%);
             }
 
+        }
+    }
+}
+
+/**********************
+    **********************
+       TOP CATEGORY
+    **********************
+**********************/
+.top__category {
+    padding-top: 115px;
+    padding-bottom: 136px;
+
+    .section__top {
+        margin-bottom: 88px;
+
+        &-title::after {
+            background: transparent;
+            border: 1px solid $btn_bg;
+        }
+
+        h1::after {
+            width: 0.125rem;
+            height: 4.1875rem;
+            right: 3.375rem;
+            top: 5.3rem;
+            transform: translate(0);
+        }
+    }
+
+    &-box {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 100px;
+    }
+
+    &-item.main {
+        grid-column: auto/ span 2;
+        grid-row: auto/ span 2;
+
+        position: relative;
+
+        padding: 0 0 65px 44px;
+        border-left: 1px solid $main;
+
+        &::before {
+            @include pseudoItem(228, 1, $main);
+            bottom: 0;
+            left: 0;
+        }
+
+        // Button
+        &>a {
+            @extend %btn;
+            position: absolute;
+            bottom: -24px;
+            left: 50%;
+
+            &:hover {
+                border: none;
+            }
+
+            &::before {
+                border-image-source: url('../images/border-image-test.svg');
+                border-image-slice: 1;
+                border-image-width: 2;
+                border-image-outset: 0;
+                border-image-repeat: repeat;
+            }
+
+            &::after {
+                @include pseudo(url('../images/arrow-dark.svg'), 7, 41);
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(-90deg);
+                border: none;
+                background-color: transparent;
+            }
+        }
+
+        // Title
+        &>div>span {
+            @include fontMt(24, 700, 16, $main);
+            letter-spacing: 0.48px;
+            text-transform: uppercase;
+        }
+
+        // Background logoF
+        &>div {
+            position: relative;
+            z-index: 0;
+            display: flex;
+            background: #F3F0EC;
+            overflow: hidden;
+            padding: 53px 0 0 53px;
+            height: 100%;
+
+            &::before {
+                @include pseudo(url('../images/muran-item.png'), 267, 332);
+                z-index: -1;
+                left: -40px;
+                top: -81px;
+                opacity: .1;
+            }
+        }
+    }
+
+    &-item {
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        // Image borders
+        &__img {
+            border: 1px solid $border_color;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        // Texts
+        &__text {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        // Title
+        &>div span {
+            @extend .category__item-title;
+        }
+
+        // Button
+        &:not(.main) a {
+            padding-right: 61px;
+            padding-left: 61px;
+            @include fontMt(18, 400, 16, $main);
+            @extend %btn;
+
+            &:hover {
+                border: none;
+
+                &:after {
+                    background: $btn_bg;
+                    right: -0.625rem;
+                    bottom: -0.625rem;
+                }
+            }
+
+            &::after {
+                background: transparent;
+                right: 0;
+                bottom: 0;
+            }
+
+            .btn__cart {
+                position: absolute;
+                background-image: url('../images/shopping-cart.svg');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 22px;
+                height: 23px;
+                bottom: -14px;
+                left: 23px;
+                z-index: 1;
+
+                transition: 1s all;
+            }
         }
     }
 }
