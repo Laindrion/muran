@@ -1007,17 +1007,33 @@ $item_bg: #F3F0EC;
     }
 
     &-item {
-
         display: flex;
         flex-direction: column;
         gap: 25px;
 
         // Image borders
         &__img {
+            position: relative;
+
             border: 1px solid $border_color;
             display: flex;
             align-items: center;
             justify-content: center;
+
+            transition: .4s all;
+
+            &:hover {
+                box-shadow: 1px 0px 8px 5px rgba(34, 60, 80, 0.2);
+                border: transparent;
+
+                &>.item__show {
+                    opacity: 1;
+                    visibility: visible;
+
+                    right: -25px;
+                    top: -25px;
+                }
+            }
         }
 
         // Texts
@@ -1032,7 +1048,7 @@ $item_bg: #F3F0EC;
         }
 
         // Button
-        &:not(.main) a {
+        &:not(.main) &__link {
             padding-right: 61px;
             padding-left: 61px;
             @include fontMt(18, 400, 16, $main);
@@ -1067,6 +1083,30 @@ $item_bg: #F3F0EC;
                 z-index: 1;
 
                 transition: 1s all;
+            }
+        }
+
+        // Button end
+
+        // Item eye
+        .item__show {
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            right: -20px;
+            top: -20px;
+            width: 51px;
+            height: 51px;
+            background-color: $main;
+            padding: 10px;
+
+            transition: .4s all;
+
+            &::before {
+                @include pseudo(url('../images/eye.svg'), 30, 30);
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
             }
         }
     }
