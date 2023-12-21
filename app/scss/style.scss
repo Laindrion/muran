@@ -681,7 +681,18 @@ $item_bg: #F3F0EC;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 53px;
-        row-gap: 55px;
+        row-gap: 40px;
+
+        // The huge main div on the right side
+        &>div:nth-child(3) {
+            grid-row: 3 / 1;
+            grid-column: 3 / 3;
+        }
+
+        &>div {
+            overflow-y: hidden;
+            padding-top: 1.875rem;
+        }
     }
 
 
@@ -693,8 +704,8 @@ $item_bg: #F3F0EC;
         border: 0.4px solid $border_color;
         padding: 28px 24px 0 35px;
         justify-content: space-between;
+        height: 100%;
 
-        overflow: hidden;
 
         &:not(.main) {
             max-height: 162px;
@@ -704,11 +715,7 @@ $item_bg: #F3F0EC;
 
         &-inner {}
 
-
         &.main {
-            grid-row: 3 / 1;
-            grid-column: 3 / 3;
-
             span {
                 @include fontMt(18, 400, 16, $main);
                 letter-spacing: 0.36px;
@@ -717,11 +724,11 @@ $item_bg: #F3F0EC;
 
             .category__item-img {
                 mix-blend-mode: darken;
-                mix-blend-mode: darken;
-                max-width: 100%;
-                width: 100%;
+                max-width: 104%;
+                width: 104%;
                 position: absolute;
                 right: 0;
+                transform: translateY(-4%);
             }
         }
 
@@ -738,7 +745,7 @@ $item_bg: #F3F0EC;
             }
 
             .category__item-img {
-                transform: translate(0);
+                transform: translate(0, -56px);
             }
         }
 
@@ -1241,5 +1248,52 @@ $item_bg: #F3F0EC;
 @media (max-width: 1480px) {
     html {
         font-size: $global_font_size - 3 + px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .header .menu__top-list .search>div {
+        display: none;
+    }
+}
+
+@media (max-width:640px) {
+    .header .menu__top-list {
+        flex-direction: row-reverse;
+    }
+
+    .header .menu__top-list>div {
+        gap: 21px;
+    }
+
+    .header .menu__top-list .menu__phone-number {
+        display: none;
+    }
+
+    .menu__list {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .header .menu__list-item {
+        display: grid;
+        grid-template-rows: auto 0;
+        transition: .4s all;
+
+        overflow: hidden;
+
+        width: 100%;
+
+        &:hover {
+            grid-template-rows: auto;
+            transition: .4s all;
+        }
+    }
+
+    .header .menu__list-item ul {
+        position: static;
     }
 }
