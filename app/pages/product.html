@@ -34,21 +34,23 @@
                     для головы
                 </h3>
 
-                <div>
+                <div class="product__capacity">
+
+                    <input type="radio" id="capacity1" name="capacity">
                     <label for="capacity1">
                         500 ml
-                        <input type="radio" id="capacity1" name="capacity">
                     </label>
 
+                    <input type="radio" id="capacity2" name="capacity">
                     <label for="capacity2">
                         250 ml
-                        <input type="radio" id="capacity2" name="capacity">
                     </label>
 
+                    <input type="radio" id="capacity3" name="capacity">
                     <label for="capacity3">
                         150 ml
-                        <input type="radio" id="capacity3" name="capacity">
                     </label>
+
                 </div>
 
                 <ul>
@@ -102,8 +104,7 @@
                     </li>
                 </ul>
 
-                <div>
-
+                <div class="product__price">
                     <div>
                         <span>
                             <s>
@@ -111,21 +112,20 @@
                             </s>
                         </span>
 
-                        <span>
-                            509 грн
-                        </span>
+                        <div>
+                            <span>
+                                509
+                            </span>
+                            грн
+                        </div>
                     </div>
-
-                    <div>
-                        <a class="btn" href="#">
-                            В корзину
-                        </a>
-
-                        <span class="danger">
-                            * Выберите, пожалуйста,
-                            объём емкости
-                        </span>
-                    </div>
+                    <a class="btn" href="#">
+                        В корзину
+                    </a>
+                    <span class="danger">
+                        * Выберите, пожалуйста,
+                        объём емкости
+                    </span>
                 </div>
 
             </div>
@@ -187,10 +187,38 @@
     </div>
 </section>
 
-<section class="recent__category">
+<section class="products__category">
     <div class="container">
-        <div class="recent__category-slider">
-            
+
+        <div class="section__top">
+            <h3>
+                Товары категории
+            </h3>
+            <div>
+                <span class="section__top-title">
+                    Товары
+                </span>
+            </div>
+        </div>
+
+        <div class="products__category-slider">
+            <div class="products__category-slider__item">
+                <div class="products__category-slider__image">
+                    <img src="../images/product-slider-item.jpg" alt="">
+                </div>
+                <div>
+                    <span>
+                        conditioner
+
+                    </span>
+                    <span>
+                        134$
+                    </span>
+                </div>
+                <a class="btn" href="#">
+                    В корзину
+                </a>
+            </div>
         </div>
     </div>
 </section>

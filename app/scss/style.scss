@@ -21,6 +21,8 @@ $title: #372821;
 $text: #372821;
 $secondary_text: #969696;
 
+$strong_color: #181818;
+
 $nav_bg_color: #F2EFEB;
 $cart_items_color: #FF8989;
 
@@ -392,6 +394,7 @@ label {
 .section__header {
     display: flex;
     align-items: center;
+    margin-bottom: 120px;
 
 
     background-image: url('../images/section-header.png');
@@ -1153,13 +1156,208 @@ $item_bg: #F3F0EC;
 
 /**********************
     **********************
-       PRODUCT
+       PRODUCT PAGE
     **********************
 **********************/
 
+.product {
+    padding-bottom: 100px;
 
-.product {}
+    &__wrapper {
+        display: flex;
+    }
 
+    &__images {
+        width: 66%;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        &>span {
+            @include fontMt(18, 400, 16, #8e8e8e);
+        }
+
+        &>h3 {
+            @include fontMt(35, 700, 50.015, $title);
+        }
+
+        /* Capacity starts */
+        .product__capacity {
+            display: flex;
+            justify-content: space-between;
+
+            label {
+                @extend %btn;
+                padding: 17px 30px;
+
+                &::after {
+                    right: 0;
+                    bottom: 0;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    border: none;
+                }
+            }
+
+            input[type=radio] {
+                display: none;
+
+                &:checked+label {
+                    &::after {
+                        right: -0.425rem;
+                        bottom: -0.425rem;
+                        opacity: 1;
+                    }
+                }
+            }
+
+        }
+
+        /* Capacity ends */
+
+        /* Product list starts */
+        ul {
+            @include fontMt(18, 400, 38.5, $strong_color);
+
+            strong {
+                @include fontMt(18, 700, 38.5, $strong_color);
+            }
+        }
+
+        /* Product list ends */
+
+
+        /* Product price starts */
+        .product__price {
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+
+            &>div {
+                display: flex;
+                flex-direction: column;
+
+                &:first-child {
+                    width: 50%;
+
+                    &>div {
+                        display: flex;
+                        gap: 6px;
+                        @include fontMt(22, 400, 38.5, $text);
+                    }
+
+                    s {
+                        @include fontMt(22, 400, 38.5, #8e8e8e);
+                    }
+
+                    span {
+                        @include fontMt(55, 700, 78.595, $main);
+                    }
+                }
+
+                &:last-child {
+                    align-items: flex-start;
+                }
+            }
+
+            .btn {
+                &::after {
+                    display: none;
+                }
+            }
+
+            .danger {
+                display: none;
+                justify-content: flex-end;
+                width: 235px;
+                text-wrap: wrap;
+                margin-left: auto;
+                margin-top: 39px;
+
+                @include fontMt(18, 400, 25.722, #FF4141);
+
+
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+
+        /* Product price ends */
+    }
+}
+
+%section_top_title {
+    h3 {
+        @include fontMt(35, 700, 50.015, $main);
+
+        @extend %line_right;
+        max-width: 550px;
+        padding-left: 40px;
+
+        &::after {
+            width: 4.1875rem;
+            top: 1.5625rem;
+            right: -5.625rem;
+        }
+    }
+}
+
+.product__descr {
+    padding-bottom: 40px;
+
+    .section__top {
+        margin-bottom: 80px;
+
+        @extend %section_top_title;
+    }
+
+    &-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &-addition {
+        padding-top: 100px;
+
+        .section__top {
+            padding-left: 40px;
+        }
+    }
+}
+
+.products__category {
+    .section__top {
+        @extend %section_top_title;
+    }
+
+
+    &-slider {
+        &__item {
+            max-width: 291px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+
+            &>div {
+                display: flex;
+                justify-content: space-between;
+                text-transform: uppercase;
+            }
+        }
+
+        &__image {
+            border: 1px solid $border_color;
+            height: 327px;
+        }
+    }
+}
 
 /**********************
     **********************
