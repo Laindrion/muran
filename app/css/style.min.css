@@ -13569,6 +13569,48 @@ label textarea {
   border: 1px solid #F4F4F4;
 }
 
+.section__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: url("../images/section-header.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 25rem;
+  height: 183px;
+}
+.section__header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 27px;
+}
+.section__header-wrapper h2 {
+  font-family: "Gotham Pro";
+  font-size: 2.8125rem;
+  font-weight: 600;
+  line-height: 3.526875rem;
+  color: #372821;
+}
+.section__header-wrapper > div {
+  -webkit-transform: translate(0px, 5px);
+  -ms-transform: translate(0px, 5px);
+  transform: translate(0px, 5px);
+}
+.section__header-wrapper > div span {
+  font-family: "Gotham Pro";
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #232323;
+}
+
 .hidden {
   opacity: 0;
   -webkit-transform: translateX(-100%);
@@ -14396,6 +14438,11 @@ html.modal__open {
   transform: translate(-50%, -50%);
 }
 
+/**********************
+    **********************
+       PRODUCT
+    **********************
+**********************/
 /**********************
     **********************
        FOOTER

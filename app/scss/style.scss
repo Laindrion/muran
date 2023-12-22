@@ -389,6 +389,37 @@ label {
     img {}
 }
 
+.section__header {
+    display: flex;
+    align-items: center;
+
+
+    background-image: url('../images/section-header.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 25rem;
+
+    height: 183px;
+
+    &-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+
+        h2 {
+            @include fontGp(45, 600, 56.43, $title);
+        }
+
+        &>div {
+            transform: translate(0px, 5px);
+
+            span {
+                @include fontMt(20, 400, 16, $btn_font_color);
+            }
+        }
+    }
+}
+
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
@@ -1118,6 +1149,17 @@ $item_bg: #F3F0EC;
         }
     }
 }
+
+
+/**********************
+    **********************
+       PRODUCT
+    **********************
+**********************/
+
+
+.product {}
+
 
 /**********************
     **********************
