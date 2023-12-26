@@ -3,6 +3,7 @@
 @import 'node_modules/magnific-popup/dist/magnific-popup';
 @import 'node_modules/treeflex/dist/css/treeflex';
 @import 'node_modules/reset.css/reset';
+@import 'node_modules/swiper/swiper-bundle.min';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import '_fonts';
 
@@ -1339,8 +1340,11 @@ $item_bg: #F3F0EC;
 
 
     &-slider {
+        width: 600px;
+        height: 600px;
+
         &__item {
-            max-width: 291px;
+             /* max-width: 291px; */
             display: flex;
             flex-direction: column;
             gap: 25px;
