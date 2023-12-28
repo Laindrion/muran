@@ -1344,7 +1344,7 @@ $item_bg: #F3F0EC;
         height: 600px;
 
         &__item {
-             /* max-width: 291px; */
+            /* max-width: 291px; */
             display: flex;
             flex-direction: column;
             gap: 25px;
@@ -1359,6 +1359,102 @@ $item_bg: #F3F0EC;
         &__image {
             border: 1px solid $border_color;
             height: 327px;
+        }
+    }
+}
+
+/**********************
+    **********************
+       CONTACTS
+    **********************
+**********************/
+.contacts {
+    padding-bottom: 190px;
+    position: relative;
+
+    &::before {
+        @include pseudo(url('../images/contacts-bg.svg'), 606, 753);
+        left: 0;
+        top: 50px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        p {
+            @include fontGp(18, 400, 39.042, $black);
+        }
+    }
+
+
+
+    &__map {
+        padding-bottom: 144px;
+
+        .section__top {
+            padding-bottom: 71px;
+
+            h3 {
+                @include fontGp(45, 700, 56.43, $title);
+
+                @extend %line_top;
+
+                &::before {
+                    left: 18%;
+                    top: -4.875rem;
+                }
+
+                @extend %line_right;
+
+                &::after {
+                    width: 4.1875rem;
+                    right: -7.625rem;
+                }
+            }
+        }
+
+        &-wrapper {
+            display: flex;
+            gap: 120px;
+
+            >div {
+                width: 743px;
+                height: 342px;
+
+                >iframe {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            text-wrap: initial;
+
+            li {
+                padding-left: 90px;
+                position: relative;
+
+                &::after {
+                    @include pseudoItem(1, 40, #5B5B5B);
+                    left: 4rem;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &::before {
+                    @include pseudo(url('../images/clock-list.svg'), 39, 39);
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            }
         }
     }
 }
