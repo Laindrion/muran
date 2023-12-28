@@ -15491,8 +15491,12 @@ html.modal__open {
     **********************
 **********************/
 .cart {
+  /* I need to change the name of the class in the header in order to avoid the conflict in code in the future */
   /* Created only for inner (It's the same with .cart__list-item) */
   /* Cart submit */
+}
+.cart__section {
+  padding-bottom: 250px;
 }
 .cart__box {
   background: #FFF;

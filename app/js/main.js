@@ -140,6 +140,22 @@ $(document).ready(function () {
   let total = document.getElementById('total');
   let promocodeInput = document.getElementById('promocode');
 
+  /* Validator for promocode input */
+  if (promocodeInput) {
+    /* Promocode */
+    promocodeInput.addEventListener('change', () => {
+      if (promocodeInput.value === "Pencil3000") {
+        let percentage = 90;
+        let discount = (Number(total.innerText) / 100) * percentage;
+
+        total.innerText = Number(total.innerText) - Math.round(discount);
+        console.log(discount)
+      } else {
+        total.innerText = Number(total.innerText);
+      }
+    })
+  }
+
   /* Inside the cart Items */
   cartItems.forEach((item) => {
     let operators = item.querySelectorAll('.change-button');

@@ -1466,6 +1466,11 @@ $item_bg: #F3F0EC;
 **********************/
 .cart {
 
+    /* I need to change the name of the class in the header in order to avoid the conflict in code in the future */
+    &__section {
+        padding-bottom: 250px;
+    }
+
     &__box {
         background: #FFF;
         box-shadow: 0px 3px 26px 0px rgba(0, 0, 0, 0.07);
