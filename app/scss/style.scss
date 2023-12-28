@@ -58,7 +58,7 @@ $global_font_size: 16;
 }
 
 @mixin fontMt($font_size, $font_weight, $line_height, $font_color) {
-    font-family: $font_Gp;
+    font-family: $font_Mt;
     font-size: calc($font_size / $global_font_size) + rem;
     font-weight: $font_weight;
     line-height: calc($line_height / $global_font_size) + rem;
@@ -1091,8 +1091,8 @@ $item_bg: #F3F0EC;
 
         // Button
         &:not(.main) &__link {
-            padding-right: 61px;
-            padding-left: 61px;
+            padding-right: 60px;
+            padding-left: 60px;
             @include fontMt(18, 400, 16, $main);
             @extend %btn;
 
@@ -1455,6 +1455,168 @@ $item_bg: #F3F0EC;
                     transform: translateY(-50%);
                 }
             }
+        }
+    }
+}
+
+/**********************
+    **********************
+       CART
+    **********************
+**********************/
+.cart {
+
+    &__box {
+        background: #FFF;
+        box-shadow: 0px 3px 26px 0px rgba(0, 0, 0, 0.07);
+        max-width: 1004px;
+        padding: 61px;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 43px;
+        }
+    }
+
+    &__list {
+        &-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 24px 0;
+            border-top: 1px solid #C8C8C8;
+
+            &:last-child {
+                border-bottom: 1px solid #C8C8C8;
+            }
+        }
+    }
+
+    /* Created only for inner (It's the same with .cart__list-item) */
+    &__item-inner {
+        display: flex;
+        gap: 46px;
+    }
+
+    &__product {
+        &-img {
+            width: 174px;
+            height: 200px;
+            border: 1px solid #eee;
+
+            img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        &-info {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            padding-top: 21px;
+
+            >h4 {
+                @include fontMt(20, 700, 28.58, $title);
+            }
+
+            >div {
+                margin-top: 30px;
+                display: flex;
+            }
+
+            .change-button {
+                @include fontMt(16, 400, 16, $main);
+                width: 29px;
+                height: 29px;
+                background: #F2EFEB;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .product {
+                &-qty {
+                    @include fontMt(16, 400, 16, $main);
+                    width: 29px;
+                    height: 29px;
+                    background: #F2EFEB;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+        }
+    }
+
+    .price {
+        display: flex;
+        flex-direction: column;
+
+        s {
+            @include fontMt(18, 400, 38.5, #8E8E8E);
+        }
+
+        >span {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        &-num {
+            @include fontMt(40, 700, 57.16, $main);
+        }
+    }
+
+    // After list - inner
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 44px;
+        padding-bottom: 60px;
+    }
+
+    label {
+        @include fontMt(20, 400, 28.58, $main);
+        flex-direction: row;
+        align-items: center;
+        gap: 27px;
+
+        input {
+            border-radius: 0;
+        }
+    }
+
+    &__sum {
+        display: flex;
+        align-items: center;
+        gap: 83px;
+
+        >span {
+            @include fontMt(20, 400, 28.58, $main);
+        }
+
+        &-inner {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        #total {
+            @include fontMt(40, 700, 57.16, $main);
+        }
+    }
+
+    /* Cart submit */
+    &__submit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            text-decoration: underline;
         }
     }
 }

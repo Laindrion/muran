@@ -14050,7 +14050,7 @@ h4 {
   border-radius: 0;
   padding: 17px 64px;
   background: transparent;
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14305,7 +14305,7 @@ label textarea {
   transform: translate(0px, 5px);
 }
 .section__header-wrapper > div span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.25rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14403,7 +14403,7 @@ label textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 0.5rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14428,7 +14428,7 @@ label textarea {
   height: 20px;
 }
 .header .menu__top-list #search {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 0.75rem;
   font-weight: 300;
   line-height: 1rem;
@@ -14439,7 +14439,7 @@ label textarea {
   max-width: 136px;
 }
 .header .menu__top-list .menu__phone-number {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14474,7 +14474,7 @@ label textarea {
   text-align: center;
 }
 .header .menu__list a {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14689,7 +14689,7 @@ html.modal__open {
   max-height: 162px;
 }
 .category__item.main span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -14879,7 +14879,7 @@ html.modal__open {
   gap: 70px;
 }
 .history__inner > div span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 2.372625rem;
@@ -14996,7 +14996,7 @@ html.modal__open {
   background-color: transparent;
 }
 .top__category-item.main > div > span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1rem;
@@ -15074,9 +15074,9 @@ html.modal__open {
   justify-content: space-between;
 }
 .top__category-item:not(.main) .top__category-item__link {
-  padding-right: 61px;
-  padding-left: 61px;
-  font-family: "Gotham Pro";
+  padding-right: 60px;
+  padding-left: 60px;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -15172,14 +15172,14 @@ html.modal__open {
   /* Product price ends */
 }
 .product__info > span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
   color: #8e8e8e;
 }
 .product__info > h3 {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 2.1875rem;
   font-weight: 700;
   line-height: 3.1259375rem;
@@ -15213,14 +15213,14 @@ html.modal__open {
   opacity: 1;
 }
 .product__info ul {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 2.40625rem;
   color: #181818;
 }
 .product__info ul strong {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 2.40625rem;
@@ -15253,21 +15253,21 @@ html.modal__open {
   display: -ms-flexbox;
   display: flex;
   gap: 6px;
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.375rem;
   font-weight: 400;
   line-height: 2.40625rem;
   color: #372821;
 }
 .product__info .product__price > div:first-child s {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.375rem;
   font-weight: 400;
   line-height: 2.40625rem;
   color: #8e8e8e;
 }
 .product__info .product__price > div:first-child span {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 3.4375rem;
   font-weight: 700;
   line-height: 4.9121875rem;
@@ -15290,7 +15290,7 @@ html.modal__open {
   text-wrap: wrap;
   margin-left: auto;
   margin-top: 39px;
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.607625rem;
@@ -15303,7 +15303,7 @@ html.modal__open {
 }
 
 .products__category .section__top h3, .product__descr .section__top h3 {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 2.1875rem;
   font-weight: 700;
   line-height: 3.1259375rem;
@@ -15487,6 +15487,227 @@ html.modal__open {
 
 /**********************
     **********************
+       CART
+    **********************
+**********************/
+.cart {
+  /* Created only for inner (It's the same with .cart__list-item) */
+  /* Cart submit */
+}
+.cart__box {
+  background: #FFF;
+  -webkit-box-shadow: 0px 3px 26px 0px rgba(0, 0, 0, 0.07);
+  box-shadow: 0px 3px 26px 0px rgba(0, 0, 0, 0.07);
+  max-width: 1004px;
+  padding: 61px;
+}
+.cart__box h2 {
+  text-align: center;
+  margin-bottom: 43px;
+}
+.cart__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 24px 0;
+  border-top: 1px solid #C8C8C8;
+}
+.cart__list-item:last-child {
+  border-bottom: 1px solid #C8C8C8;
+}
+.cart__item-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 46px;
+}
+.cart__product-img {
+  width: 174px;
+  height: 200px;
+  border: 1px solid #eee;
+}
+.cart__product-img img {
+  height: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.cart__product-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 11px;
+  padding-top: 21px;
+}
+.cart__product-info > h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.78625rem;
+  color: #372821;
+}
+.cart__product-info > div {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.cart__product-info .change-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #372821;
+  width: 29px;
+  height: 29px;
+  background: #F2EFEB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart__product-info .product-qty {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #372821;
+  width: 29px;
+  height: 29px;
+  background: #F2EFEB;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart .price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.cart .price s {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 2.40625rem;
+  color: #8E8E8E;
+}
+.cart .price > span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+}
+.cart .price-num {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 3.5725rem;
+  color: #372821;
+}
+.cart__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 44px;
+  padding-bottom: 60px;
+}
+.cart label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.78625rem;
+  color: #372821;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 27px;
+}
+.cart label input {
+  border-radius: 0;
+}
+.cart__sum {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 83px;
+}
+.cart__sum > span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.78625rem;
+  color: #372821;
+}
+.cart__sum-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+}
+.cart__sum #total {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 3.5725rem;
+  color: #372821;
+}
+.cart__submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.cart__submit a {
+  text-decoration: underline;
+}
+
+/**********************
+    **********************
        FOOTER
     **********************
 **********************/
@@ -15607,7 +15828,7 @@ html.modal__open {
   gap: 20px;
 }
 .footer__nav-cover > ul > div a {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1rem;
@@ -15623,7 +15844,7 @@ html.modal__open {
   border-top: 1px solid #DEDEDE;
 }
 .footer__bottom a {
-  font-family: "Gotham Pro";
+  font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;

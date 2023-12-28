@@ -129,5 +129,80 @@ $(document).ready(function () {
       el: '.swiper-scrollbar',
     },
   });
+
+
+  /**********************
+    **********************
+      CART
+    **********************
+    **********************/
+  let cartItems = document.querySelectorAll('.cart__list-item');
+  let total = document.getElementById('total');
+  let promocodeInput = document.getElementById('promocode');
+
+  /* Inside the cart Items */
+  cartItems.forEach((item) => {
+    let operators = item.querySelectorAll('.change-button');
+    let qtys = item.querySelectorAll('.product-qty');
+    let prices = item.querySelectorAll('.price-num');
+
+    prices.forEach((price) => {
+      totalSum = Number(total.innerText) + Number(price.innerText)
+      total.innerText = totalSum
+    })
+
+    operators.forEach((operator) => {
+      let result;
+      let totalSum;
+
+      /* Click event */
+      operator.addEventListener('click', () => {
+
+        /* Checking operators */
+        if (operator.innerText === '+') {
+          /************ For quantity ************/
+          qtys.forEach((qty) => {
+            /* Limit to 20 */
+            if (qty.innerText >= 20) {
+
+            } else {
+              result = Number(qty.innerText) + 1;
+              qty.innerText = result;
+
+              /*********** For total price ************/
+              prices.forEach((price) => {
+                totalSum = Number(total.innerText) + Number(price.innerText)
+                console.log(totalSum)
+                total.innerText = totalSum
+              })
+            }
+          })
+        } else if (operator.innerText === '-') {
+
+          /************ For quantity ************/
+          qtys.forEach((qty) => {
+            /* There can't be less than 0 */
+            if (qty.innerText <= 0) {
+            } else {
+              result = Number(qty.innerText) - 1;
+              qty.innerText = result;
+
+              /************ For total price ************/
+              prices.forEach((price) => {
+                totalSum = Number(total.innerText) - Number(price.innerText)
+                console.log(totalSum)
+                total.innerText = totalSum
+              })
+            }
+          })
+        } else {
+          console.log("There should be either + or -")
+        }
+      })
+      /*  */
+    })
+
+  })
+
 });
 
