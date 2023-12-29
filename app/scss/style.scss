@@ -1,3 +1,6 @@
+@use "sass:math";
+
+
 @import 'node_modules/slick-carousel/slick/slick';
 @import 'node_modules/bootstrap/dist/css/bootstrap';
 @import 'node_modules/magnific-popup/dist/magnific-popup';
@@ -6,7 +9,6 @@
 @import 'node_modules/swiper/swiper-bundle.min';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import '_fonts';
-
 
 /**********************
     **********************
