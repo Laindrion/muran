@@ -1,18 +1,6 @@
 $(document).ready(function () {
 
   /**********************
-  **********************
-    LANGUAGE BUTTON
-  *********************
-  **********************/
-  $(".navbar__top-item-lang").click(function () {
-    $(".navbar__top-item-lang__inner").toggleClass("active");
-
-    $(".burger__navbar").removeClass("active");
-    $("body").removeClass("modal__open");
-  });
-
-  /**********************
     **********************
       HEADER SEARCH
     **********************
@@ -39,35 +27,6 @@ $(document).ready(function () {
   $("#burger-menu-close").click(() => {
     $(".burger__navbar").removeClass("active");
     $("html").removeClass("modal__open");
-  });
-
-  /**********************
-    **********************
-      TABS
-    **********************
-    **********************/
-  const tabs = document.querySelectorAll(".tab-link");
-  const all_list = document.querySelectorAll(".tab-content");
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", function () {
-
-      tabs.forEach((tab) => {
-        tab.classList.remove("active");
-      });
-      tab.classList.add("active");
-
-      all_list.forEach((list) => {
-        list.classList.remove("active");
-      });
-      all_list.forEach((list) => {
-        list.classList.remove('active');
-      });
-      all_list[index - 1].classList.add('active');
-
-      console.log(index);
-
-    });
   });
 
   /**********************
