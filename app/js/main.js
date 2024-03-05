@@ -103,24 +103,19 @@ $(document).ready(function () {
 
   const submitBtn = document.getElementById('submit');
   let promo = 'Pencil3000';
-  let numberOfUse = 1;
+  let numberOfUse = 0;
   let promoLimit = 1;
   let promoWasUsed = false;
 
   let overallPrice = 0;
 
-  for (let i = 0; i < prices.length; i++) {
-    overallPrice += Number(prices[i].innerText);
-  }
-
   console.log(overallPrice)
-
 
   submitBtn.addEventListener('click', (event) => {
     console.log(numberOfUse)
     /* Validator for promocode input */
     if (promocodeInput) {
-      if (numberOfUse > promoLimit) {
+      if (numberOfUse >= promoLimit) {
         alert(`The promocode was used more than ${numberOfUse} time`);
       } else {
         /* Promocode */
@@ -162,7 +157,14 @@ $(document).ready(function () {
       /* Click event */
       operator.addEventListener('click', () => {
 
+
+        /*  promoWasUsed = false;
+         numberOfUse = 0; */
+
+
         /* Checking operators in buttons */
+
+        /* + OPERATOR */
         if (operator.innerText === '+') {
           /************ For quantity ************/
           qtys.forEach((qty) => {
@@ -191,12 +193,14 @@ $(document).ready(function () {
               })
             }
           })
+          /* - OPERATOR */
         } else if (operator.innerText === '-') {
 
           /************ For quantity ************/
           qtys.forEach((qty) => {
-            /* There can't be less than 0 */
-            if (qty.innerText <= 0) {
+
+            /* Limit for items */
+            if (qty.innerText <= 1) {
             } else {
               result = Number(qty.innerText) - 1;
               qty.innerText = result;
@@ -222,3 +226,13 @@ $(document).ready(function () {
 
 });
 
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+let user = makeUser();
+
+alert(user.ref.name);

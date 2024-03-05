@@ -105,7 +105,7 @@ $global_font_size: 16;
     &>&-inner {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 0.625rem;
     }
 
     &>div {
@@ -200,7 +200,7 @@ h4 {
     z-index: 0;
 
     border-radius: 0;
-    padding: 17px 64px;
+    padding: 1.0625rem 4rem;
     background: transparent;
     @include fontMt(18, 400, 16, $btn_font_color);
 
@@ -241,10 +241,10 @@ h4 {
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
-        height: 51px;
-        width: 7px;
-        bottom: -22px;
-        left: 29px;
+        height: 3.1875rem;
+        width: 0.4375rem;
+        bottom: -1.375rem;
+        left: 1.8125rem;
         z-index: 1;
 
         transition: 1s all;
@@ -266,15 +266,15 @@ h4 {
 
 @keyframes arrow {
     0% {
-        bottom: -22px;
+        bottom: -1.375rem;
     }
 
     50% {
-        bottom: -5px;
+        bottom: -0.3125rem;
     }
 
     100% {
-        bottom: -22px;
+        bottom: -1.375rem;
     }
 }
 
@@ -321,7 +321,7 @@ body {
     display: block;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 0.9375rem;
 }
 
 a {
@@ -345,17 +345,17 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     cursor: pointer;
 
     & span {
         display: block;
         width: 100%;
-        height: 4px;
+        height: 0.25rem;
         background: $white;
-        margin-bottom: 5px;
-        border-radius: 30px;
+        margin-bottom: 0.3125rem;
+        border-radius: 1.875rem;
     }
 }
 
@@ -368,7 +368,7 @@ img {
 label {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.625rem;
     cursor: pointer;
 
 
@@ -378,14 +378,14 @@ label {
         border: none;
         outline: none;
         background: $bg_dark;
-        height: 55px;
-        border-radius: 20px;
+        height: 3.4375rem;
+        border-radius: 1.25rem;
         border: 1px solid #F4F4F4;
-        padding: 10px;
+        padding: 0.625rem;
     }
 
     textarea {
-        height: 126px;
+        height: 7.875rem;
         border: 1px solid #F4F4F4;
     }
 }
@@ -397,7 +397,7 @@ label {
 .section__header {
     display: flex;
     align-items: center;
-    margin-bottom: 120px;
+    margin-bottom: 7.5rem;
 
 
     background-image: url('../images/section-header.png');
@@ -405,19 +405,19 @@ label {
     background-size: cover;
     background-position: 25rem;
 
-    height: 183px;
+    height: 11.4375rem;
 
     &-wrapper {
         display: flex;
         align-items: center;
-        gap: 27px;
+        gap: 1.6875rem;
 
         h2 {
             @include fontGp(45, 600, 56.43, $title);
         }
 
         &>div {
-            transform: translate(0px, 5px);
+            transform: translate(0px, 0.3125rem);
 
             span {
                 @include fontMt(20, 400, 16, $btn_font_color);
@@ -429,7 +429,7 @@ label {
 .hidden {
     opacity: 0;
     transform: translateX(-100%);
-    filter: blur(5px);
+    filter: blur(0.3125rem);
     transition: 1s all;
 
     &.show {
@@ -445,7 +445,7 @@ label {
     **********************
 **********************/
 .header {
-    padding-bottom: 46px;
+    padding-bottom: 2.875rem;
 
     .menu {
         position: relative;
@@ -454,7 +454,7 @@ label {
 
         /* MENU TOP starts */
         &__top {
-            padding: 17px 0;
+            padding: 1.0625rem 0;
 
             &-list {
                 display: flex;
@@ -464,7 +464,7 @@ label {
                 &>div {
                     display: flex;
                     justify-content: space-between;
-                    gap: 97px;
+                    gap: 6.0625rem;
                 }
 
                 .cart a {
@@ -478,7 +478,7 @@ label {
                     &>div {
                         display: flex;
                         align-items: center;
-                        gap: 20px;
+                        gap: 1.25rem;
                     }
                 }
 
@@ -489,11 +489,11 @@ label {
                     align-items: center;
                     @include fontMt(8, 400, 16, $white);
                     background: $cart_items_color;
-                    width: 13px;
-                    height: 13px;
+                    width: 0.8125rem;
+                    height: 0.8125rem;
                     text-align: center;
                     border-radius: 50%;
-                    right: -20px;
+                    right: -1.25rem;
                     top: 50%;
                     transform: translateY(-85%);
                 }
@@ -503,8 +503,8 @@ label {
                     background-image: url('../images/search.svg');
                     background-position: center;
                     background-size: contain;
-                    width: 20px;
-                    height: 20px;
+                    width: 1.25rem;
+                    height: 1.25rem;
                 }
 
                 #search {
@@ -512,13 +512,13 @@ label {
                     outline: none;
                     border: none;
                     border-bottom: 1px solid $search_color;
-                    max-width: 136px;
+                    max-width: 8.5rem;
                 }
 
                 .menu__phone-number {
                     @include fontMt(18, 400, 16, $text);
                     position: relative;
-                    padding-left: 30px;
+                    padding-left: 1.875rem;
 
                     &::before {
                         @include pseudo(url('../images/phone.svg'), 16, 16);
@@ -549,7 +549,7 @@ label {
 
                 &:hover {
                     background: $white;
-                    filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.10));
+                    filter: drop-shadow(0px 0.25rem 1.5rem rgba(0, 0, 0, 0.10));
 
                     & a:after {
                         transform: translateY(-50%) rotate(90deg);
@@ -572,7 +572,7 @@ label {
 
                     a {
                         display: block;
-                        padding: 18px 37px;
+                        padding: 1.125rem 2.3125rem;
 
                         &:hover {
                             font-weight: 700;
@@ -585,17 +585,17 @@ label {
 
             &-link {
                 display: block;
-                padding: 20px 30px;
+                padding: 1.25rem 1.875rem;
                 position: relative;
                 transition: .4s all;
 
                 &:has(+ul) {
-                    padding-right: 60px;
+                    padding-right: 3.75rem;
                 }
 
                 &:has(+ul):after {
                     @include pseudoItem(11, 2, $main);
-                    right: 25px;
+                    right: 1.5625rem;
                     top: 50%;
                     transform: translateY(-50%);
                     transition: .4s all;
@@ -617,7 +617,7 @@ html.modal__open {
     position: fixed;
     z-index: 1000;
     width: 100%;
-    top: 65px;
+    top: 4.0625rem;
     bottom: 0;
     background: $main;
     overflow-y: scroll;
@@ -636,7 +636,7 @@ html.modal__open {
     **********************
 **********************/
 .hero {
-    padding-bottom: 82px;
+    padding-bottom: 5.125rem;
 
     &__wrapper {
         display: flex;
@@ -650,7 +650,7 @@ html.modal__open {
         &::after {
             @include pseudo(url('../images/arrow-btn-dark.svg'), 21, 156);
             transform: translateY(-50%) rotate(90deg);
-            bottom: -130px;
+            bottom: -8.125rem;
             left: 23%;
         }
 
@@ -662,13 +662,13 @@ html.modal__open {
         &>div {
             display: flex;
             flex-direction: column;
-            gap: 87px;
+            gap: 5.4375rem;
             align-items: flex-start;
         }
     }
 
     &__title {
-        max-width: 590px;
+        max-width: 36.875rem;
 
         @extend %line_top;
 
@@ -678,9 +678,9 @@ html.modal__open {
     }
 
     &__img {
-        height: 664px;
+        height: 41.5rem;
         margin: 0 0 0 auto;
-        margin-left: -149px;
+        margin-left: -9.3125rem;
         width: 60%;
 
         img {
@@ -697,8 +697,8 @@ html.modal__open {
 $item_bg: #F3F0EC;
 
 .category {
-    padding-top: 90px;
-    padding-bottom: 140px;
+    padding-top: 5.625rem;
+    padding-bottom: 8.75rem;
 
     &__wrapper {
         position: relative;
@@ -711,14 +711,14 @@ $item_bg: #F3F0EC;
     }
 
     .section__top {
-        padding-bottom: 97px;
+        padding-bottom: 6.0625rem;
     }
 
     &__box {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 53px;
-        row-gap: 40px;
+        column-gap: 3.3125rem;
+        row-gap: 2.5rem;
 
         // The huge main div on the right side
         &>div:nth-child(3) {
@@ -736,16 +736,16 @@ $item_bg: #F3F0EC;
     &__item {
         display: flex;
         align-items: flex-start;
-        gap: 31px;
+        gap: 1.9375rem;
         position: relative;
-        border: 0.4px solid $border_color;
-        padding: 28px 24px 0 35px;
+        border: 1px solid $border_color;
+        padding: 1.75rem 1.5rem 0 2.1875rem;
         justify-content: space-between;
         height: 100%;
 
 
         &:not(.main) {
-            max-height: 162px;
+            max-height: 10.125rem;
         }
 
         transition: .4s all;
@@ -755,7 +755,7 @@ $item_bg: #F3F0EC;
         &.main {
             span {
                 @include fontMt(18, 400, 16, $main);
-                letter-spacing: 0.36px;
+                letter-spacing: 0.020rem;
                 text-transform: uppercase;
             }
 
@@ -782,13 +782,13 @@ $item_bg: #F3F0EC;
             }
 
             .category__item-img {
-                transform: translate(0, -56px);
+                transform: translate(0, -3.5rem);
             }
         }
 
         &-title {
             @include fontGp(18, 700, 16, $text);
-            padding-bottom: 5px;
+            padding-bottom: 0.3125rem;
             position: relative;
 
             &::before {
@@ -811,7 +811,7 @@ $item_bg: #F3F0EC;
             display: flex;
             transform: translateY(20%);
             transition: .4s all;
-            max-width: 167px;
+            max-width: 10.4375rem;
         }
     }
 }
@@ -823,7 +823,7 @@ $item_bg: #F3F0EC;
 **********************/
 .history {
     position: relative;
-    padding-bottom: 150px;
+    padding-bottom: 9.375rem;
 
     .container {
         position: relative;
@@ -834,8 +834,8 @@ $item_bg: #F3F0EC;
 
         &::after {
             @extend %square__arrow;
-            right: 103px;
-            bottom: 103px;
+            right: 6.4375rem;
+            bottom: 6.4375rem;
         }
     }
 
@@ -845,12 +845,12 @@ $item_bg: #F3F0EC;
         left: 0;
         top: 0;
         width: 60%;
-        height: 604px;
+        height: 37.75rem;
 
         &::before {
             @include pseudo(url('../images/section-square.svg'), 41, 41);
-            top: -15px;
-            right: -15px;
+            top: -0.9375rem;
+            right: -0.9375rem;
         }
 
         img {
@@ -861,7 +861,7 @@ $item_bg: #F3F0EC;
     .section__top {
         position: absolute;
         justify-content: flex-end;
-        margin-top: 90px;
+        margin-top: 5.625rem;
         right: 0;
         top: 25%;
     }
@@ -893,16 +893,16 @@ $item_bg: #F3F0EC;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 32px;
+        gap: 2rem;
         background: $white;
-        padding: 73px 96px 45px 70px;
-        max-width: 953px;
+        padding: 4.5625rem 6rem 2.8125rem 4.375rem;
+        max-width: 59.5625rem;
         position: absolute;
         right: 20%;
         bottom: 10%;
 
         p {
-            margin-bottom: 25px;
+            margin-bottom: 1.5625rem;
         }
     }
 
@@ -916,7 +916,7 @@ $item_bg: #F3F0EC;
         &>div {
             display: flex;
             align-items: center;
-            gap: 70px;
+            gap: 4.375rem;
 
             span {
                 @include fontMt(18, 400, 37.962, $black);
@@ -924,8 +924,8 @@ $item_bg: #F3F0EC;
         }
 
         .play__btn {
-            width: 57px;
-            height: 57px;
+            width: 3.5625rem;
+            height: 3.5625rem;
             border: 1px solid $main;
             position: relative;
 
@@ -953,11 +953,11 @@ $item_bg: #F3F0EC;
     **********************
 **********************/
 .top__category {
-    padding-top: 115px;
-    padding-bottom: 136px;
+    padding-top: 7.1875rem;
+    padding-bottom: 8.5rem;
 
     .section__top {
-        margin-bottom: 88px;
+        margin-bottom: 5.5rem;
 
         &-title::after {
             background: transparent;
@@ -976,7 +976,7 @@ $item_bg: #F3F0EC;
     &-box {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 100px;
+        gap: 6.25rem;
     }
 
     &-item.main {
@@ -985,7 +985,7 @@ $item_bg: #F3F0EC;
 
         position: relative;
 
-        padding: 0 0 65px 44px;
+        padding: 0 0 4.0625rem 2.75rem;
         border-left: 1px solid $main;
 
         &::before {
@@ -998,7 +998,7 @@ $item_bg: #F3F0EC;
         &>a {
             @extend %btn;
             position: absolute;
-            bottom: -24px;
+            bottom: -1.5rem;
             left: 50%;
 
             &:hover {
@@ -1037,14 +1037,14 @@ $item_bg: #F3F0EC;
             display: flex;
             background: #F3F0EC;
             overflow: hidden;
-            padding: 53px 0 0 53px;
+            padding: 3.3125rem 0 0 3.3125rem;
             height: 100%;
 
             &::before {
                 @include pseudo(url('../images/muran-item.png'), 267, 332);
                 z-index: -1;
-                left: -40px;
-                top: -81px;
+                left: -2.5rem;
+                top: -5.0625rem;
                 opacity: .1;
             }
         }
@@ -1053,7 +1053,7 @@ $item_bg: #F3F0EC;
     &-item {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 1.5625rem;
 
         // Image borders
         &__img {
@@ -1067,15 +1067,15 @@ $item_bg: #F3F0EC;
             transition: .4s all;
 
             &:hover {
-                box-shadow: 1px 0px 8px 5px rgba(34, 60, 80, 0.2);
+                box-shadow: 1px 0px 8px 0.3125rem rgba(34, 60, 80, 0.2);
                 border: transparent;
 
                 &>.item__show {
                     opacity: 1;
                     visibility: visible;
 
-                    right: -25px;
-                    top: -25px;
+                    right: -1.5625rem;
+                    top: -1.5625rem;
                 }
             }
         }
@@ -1093,8 +1093,8 @@ $item_bg: #F3F0EC;
 
         // Button
         &:not(.main) &__link {
-            padding-right: 60px;
-            padding-left: 60px;
+            padding-right: 3.75rem;
+            padding-left: 3.75rem;
             @include fontMt(18, 400, 16, $main);
             @extend %btn;
 
@@ -1120,10 +1120,10 @@ $item_bg: #F3F0EC;
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
-                width: 22px;
-                height: 23px;
-                bottom: -14px;
-                left: 23px;
+                width: 1.375rem;
+                height: 1.4375rem;
+                bottom: -0.875rem;
+                left: 1.4375rem;
                 z-index: 1;
 
                 transition: 1s all;
@@ -1137,12 +1137,12 @@ $item_bg: #F3F0EC;
             position: absolute;
             opacity: 0;
             visibility: hidden;
-            right: -20px;
-            top: -20px;
-            width: 51px;
-            height: 51px;
+            right: -1.25rem;
+            top: -1.25rem;
+            width: 3.1875rem;
+            height: 3.1875rem;
             background-color: $main;
-            padding: 10px;
+            padding: 0.625rem;
 
             transition: .4s all;
 
@@ -1164,7 +1164,7 @@ $item_bg: #F3F0EC;
 **********************/
 
 .product {
-    padding-bottom: 100px;
+    padding-bottom: 6.25rem;
 
     &__wrapper {
         display: flex;
@@ -1177,7 +1177,7 @@ $item_bg: #F3F0EC;
     &__info {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 1.875rem;
 
         &>span {
             @include fontMt(18, 400, 16, #8e8e8e);
@@ -1194,7 +1194,7 @@ $item_bg: #F3F0EC;
 
             label {
                 @extend %btn;
-                padding: 17px 30px;
+                padding: 1.0625rem 1.875rem;
 
                 &::after {
                     right: 0;
@@ -1250,7 +1250,7 @@ $item_bg: #F3F0EC;
 
                     &>div {
                         display: flex;
-                        gap: 6px;
+                        gap: 0.375rem;
                         @include fontMt(22, 400, 38.5, $text);
                     }
 
@@ -1277,10 +1277,10 @@ $item_bg: #F3F0EC;
             .danger {
                 display: none;
                 justify-content: flex-end;
-                width: 235px;
+                width: 14.6875rem;
                 text-wrap: wrap;
                 margin-left: auto;
-                margin-top: 39px;
+                margin-top: 2.4375rem;
 
                 @include fontMt(18, 400, 25.722, #FF4141);
 
@@ -1300,8 +1300,8 @@ $item_bg: #F3F0EC;
         @include fontMt(35, 700, 50.015, $main);
 
         @extend %line_right;
-        max-width: 550px;
-        padding-left: 40px;
+        max-width: 34.375rem;
+        padding-left: 2.5rem;
 
         &::after {
             width: 4.1875rem;
@@ -1312,10 +1312,10 @@ $item_bg: #F3F0EC;
 }
 
 .product__descr {
-    padding-bottom: 40px;
+    padding-bottom: 2.5rem;
 
     .section__top {
-        margin-bottom: 80px;
+        margin-bottom: 5rem;
 
         @extend %section_top_title;
     }
@@ -1323,14 +1323,14 @@ $item_bg: #F3F0EC;
     &-inner {
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 1.875rem;
     }
 
     &-addition {
-        padding-top: 100px;
+        padding-top: 6.25rem;
 
         .section__top {
-            padding-left: 40px;
+            padding-left: 2.5rem;
         }
     }
 }
@@ -1342,14 +1342,14 @@ $item_bg: #F3F0EC;
 
 
     &-slider {
-        width: 600px;
-        height: 600px;
+        width: 37.5rem;
+        height: 37.5rem;
 
         &__item {
             /* max-width: 291px; */
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 1.5625rem;
 
             &>div {
                 display: flex;
@@ -1360,7 +1360,7 @@ $item_bg: #F3F0EC;
 
         &__image {
             border: 1px solid $border_color;
-            height: 327px;
+            height: 20.4375rem;
         }
     }
 }
@@ -1371,19 +1371,19 @@ $item_bg: #F3F0EC;
     **********************
 **********************/
 .contacts {
-    padding-bottom: 190px;
+    padding-bottom: 11.875rem;
     position: relative;
 
     &::before {
         @include pseudo(url('../images/contacts-bg.svg'), 606, 753);
         left: 0;
-        top: 50px;
+        top: 3.125rem;
     }
 
     &__info {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        gap: 2.5rem;
 
         p {
             @include fontGp(18, 400, 39.042, $black);
@@ -1393,10 +1393,10 @@ $item_bg: #F3F0EC;
 
 
     &__map {
-        padding-bottom: 144px;
+        padding-bottom: 12.75rem;
 
         .section__top {
-            padding-bottom: 71px;
+            padding-bottom: 4.4375rem;
 
             h3 {
                 @include fontGp(45, 700, 56.43, $title);
@@ -1419,11 +1419,11 @@ $item_bg: #F3F0EC;
 
         &-wrapper {
             display: flex;
-            gap: 120px;
+            gap: 7.5rem;
 
             >div {
-                width: 743px;
-                height: 342px;
+                width: 46.4375rem;
+                height: 21.375rem;
 
                 >iframe {
                     width: 100%;
@@ -1440,7 +1440,7 @@ $item_bg: #F3F0EC;
             text-wrap: initial;
 
             li {
-                padding-left: 90px;
+                padding-left: 5.625rem;
                 position: relative;
 
                 &::after {
@@ -1470,18 +1470,18 @@ $item_bg: #F3F0EC;
 
     /* I need to change the name of the class in the header in order to avoid the conflict in code in the future */
     &__section {
-        padding-bottom: 250px;
+        padding-bottom: 15.625rem;
     }
 
     &__box {
         background: #FFF;
-        box-shadow: 0px 3px 26px 0px rgba(0, 0, 0, 0.07);
-        max-width: 1004px;
-        padding: 61px;
+        box-shadow: 0px 3px 20.375rem 0px rgba(0, 0, 0, 0.07);
+        max-width: 62.75rem;
+        padding: 3.8125rem;
 
         h2 {
             text-align: center;
-            margin-bottom: 43px;
+            margin-bottom: 2.6875rem;
         }
     }
 
@@ -1491,7 +1491,7 @@ $item_bg: #F3F0EC;
             justify-content: space-between;
             align-items: center;
 
-            padding: 24px 0;
+            padding: 1.5rem 0;
             border-top: 1px solid #C8C8C8;
 
             &:last-child {
@@ -1503,13 +1503,13 @@ $item_bg: #F3F0EC;
     /* Created only for inner (It's the same with .cart__list-item) */
     &__item-inner {
         display: flex;
-        gap: 46px;
+        gap: 2.875rem;
     }
 
     &__product {
         &-img {
-            width: 174px;
-            height: 200px;
+            width: 10.875rem;
+            height: 12.5rem;
             border: 1px solid #eee;
 
             img {
@@ -1521,22 +1521,22 @@ $item_bg: #F3F0EC;
         &-info {
             display: flex;
             flex-direction: column;
-            gap: 11px;
-            padding-top: 21px;
+            gap: 0.6875rem;
+            padding-top: 1.3125;
 
             >h4 {
                 @include fontMt(20, 700, 28.58, $title);
             }
 
             >div {
-                margin-top: 30px;
+                margin-top: 1.875rem;
                 display: flex;
             }
 
             .change-button {
                 @include fontMt(16, 400, 16, $main);
-                width: 29px;
-                height: 29px;
+                width: 1.8125rem;
+                height: 1.8125rem;
                 background: #F2EFEB;
                 display: flex;
                 justify-content: center;
@@ -1546,8 +1546,8 @@ $item_bg: #F3F0EC;
             .product {
                 &-qty {
                     @include fontMt(16, 400, 16, $main);
-                    width: 29px;
-                    height: 29px;
+                    width: 1.8125rem;
+                    height: 1.8125rem;
                     background: #F2EFEB;
                     display: flex;
                     justify-content: center;
@@ -1569,7 +1569,7 @@ $item_bg: #F3F0EC;
         >span {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 0.75rem;
         }
 
         &-num {
@@ -1581,15 +1581,15 @@ $item_bg: #F3F0EC;
     &__inner {
         display: flex;
         justify-content: space-between;
-        padding-top: 44px;
-        padding-bottom: 60px;
+        padding-top: 2.75rem;
+        padding-bottom: 3.75rem;
     }
 
     label {
         @include fontMt(20, 400, 28.58, $main);
         flex-direction: row;
         align-items: center;
-        gap: 27px;
+        gap: 1.6875rem;
 
         input {
             border-radius: 0;
@@ -1599,7 +1599,7 @@ $item_bg: #F3F0EC;
     &__sum {
         display: flex;
         align-items: center;
-        gap: 83px;
+        gap: 5.1875rem;
 
         >span {
             @include fontMt(20, 400, 28.58, $main);
@@ -1608,7 +1608,7 @@ $item_bg: #F3F0EC;
         &-inner {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
+            gap: 0.75rem;
         }
 
         #total {
@@ -1636,24 +1636,24 @@ $item_bg: #F3F0EC;
 .footer {
     color: $white;
     border-top: 1px solid #DEDEDE;
-    padding-top: 53px;
-    padding-bottom: 50px;
+    padding-top: 3.3125rem;
+    padding-bottom: 3.125rem;
 
     &__wrapper {
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: 3.75rem;
     }
 
     .socials {
         display: flex;
-        gap: 35px;
+        gap: 2.1875rem;
 
         a {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 21px;
+            padding: 1.3125;
             border: 1px solid $main;
 
             position: relative;
@@ -1678,7 +1678,7 @@ $item_bg: #F3F0EC;
     &__subtitle {
         @include fontGp(20, 400, 32.78, $text);
         letter-spacing: 0.0375rem;
-        max-width: 277px;
+        max-width: 17.3125rem;
     }
 
     &__inner {
@@ -1689,10 +1689,10 @@ $item_bg: #F3F0EC;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 22px;
+            gap: 1.375rem;
 
             p {
-                padding-bottom: 15px;
+                padding-bottom: 0.9375rem;
             }
         }
     }
@@ -1710,12 +1710,12 @@ $item_bg: #F3F0EC;
         &>ul {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 1.25rem;
 
             &>div {
                 display: flex;
                 justify-content: space-between;
-                gap: 20px;
+                gap: 1.25rem;
 
                 a {
                     @include fontMt(18, 400, 16, $secondary_text);
@@ -1727,7 +1727,7 @@ $item_bg: #F3F0EC;
     &__bottom {
         display: flex;
         justify-content: space-around;
-        padding-top: 27px;
+        padding-top: 1.6875rem;
         border-top: 1px solid #DEDEDE;
 
         a {
@@ -1773,7 +1773,7 @@ $item_bg: #F3F0EC;
     }
 
     .header .menu__top-list>div {
-        gap: 21px;
+        gap: 1.3125;
     }
 
     .header .menu__top-list .menu__phone-number {
