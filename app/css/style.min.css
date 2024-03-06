@@ -14656,7 +14656,7 @@ html.modal__open {
   -webkit-column-gap: 3.3125rem;
   -moz-column-gap: 3.3125rem;
   column-gap: 3.3125rem;
-  row-gap: 2.5rem;
+  row-gap: 2rem;
 }
 .category__box > div:nth-child(3) {
   grid-row: 3/1;
@@ -15747,7 +15747,7 @@ html.modal__open {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 1.3125;
+  padding: 1.3125rem;
   border: 1px solid #372821;
   position: relative;
 }
@@ -15923,5 +15923,8 @@ html.modal__open {
   }
   .header .menu__list-item ul {
     position: static;
+  }
+  .header .menu__list-link:has(+ ul) {
+    padding-right: 1.875rem;
   }
 }

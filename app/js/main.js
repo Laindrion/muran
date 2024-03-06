@@ -111,30 +111,32 @@ $(document).ready(function () {
 
   console.log(overallPrice)
 
-  submitBtn.addEventListener('click', (event) => {
-    console.log(numberOfUse)
-    /* Validator for promocode input */
-    if (promocodeInput) {
-      if (numberOfUse >= promoLimit) {
-        alert(`The promocode was used more than ${numberOfUse} time`);
-      } else {
-        /* Promocode */
-        if (promocodeInput.value === promo) {
-          numberOfUse += 1;
-          promoWasUsed = true;
-
-          let percentage = 90;
-          let discount = (Number(total.innerText) / 100) * percentage;
-
-          total.innerText = Number(total.innerText) - Math.round(discount);
-          console.log(discount)
+  if (submitBtn) {
+    submitBtn.addEventListener('click', (event) => {
+      console.log(numberOfUse)
+      /* Validator for promocode input */
+      if (promocodeInput) {
+        if (numberOfUse >= promoLimit) {
+          alert(`The promocode was used more than ${numberOfUse} time`);
         } else {
-          alert("Invalid promocode!")
-        }
-      }
+          /* Promocode */
+          if (promocodeInput.value === promo) {
+            numberOfUse += 1;
+            promoWasUsed = true;
 
-    }
-  })
+            let percentage = 90;
+            let discount = (Number(total.innerText) / 100) * percentage;
+
+            total.innerText = Number(total.innerText) - Math.round(discount);
+            console.log(discount)
+          } else {
+            alert("Invalid promocode!");
+          }
+        }
+
+      }
+    })
+  }
 
 
   /* Inside the cart Items */
@@ -233,6 +235,6 @@ function makeUser() {
   };
 }
 
-let user = makeUser();
+/* let user = makeUser();
 
-alert(user.ref.name);
+alert(user.ref.name); */
