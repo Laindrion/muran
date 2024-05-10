@@ -10,65 +10,37 @@
 
 <body>
 
-    <style>
-        .swiper {
-            width: 600px;
-            height: 600px;
-        }
 
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 60px;
-            background-color: #4979ff;
-        }
-    </style>
+    <button id="plusButton">+</button>
+    <span id="countDisplay">0</span>
+    <button id="minusButton">-</button>
 
-    <!-- Slider main container -->
-    <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">Slide 1</div>
-            <div class="swiper-slide">Slide 2</div>
-            <div class="swiper-slide">Slide 3</div>
-            ...
-        </div>
-        <!-- If we need pagination -->
-        <div class="swiper-pagination"></div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-
-        <!-- If we need scrollbar -->
-        <div class="swiper-scrollbar"></div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            // Optional parameters
-            direction: 'vertical',
-            loop: true,
+        let count = 0;
 
-            // If we need pagination
-            pagination: {
-                el: '.swiper-pagination',
-            },
+        function increment() {
+            if (count < 10) {
+                count++;
+                document.getElementById("countDisplay").innerText = count;
+            } else {
+                alert("I can't add on more because of my limits");
+            }
+        }
 
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
+        function decrement() {
+            if (count > 0) {
+                count--;
+                document.getElementById("countDisplay").innerText = count;
+            }
+        }
 
-            // And if we need scrollbar
-            scrollbar: {
-                el: '.swiper-scrollbar',
-            },
-        });
+        // Attach click event listeners to buttons
+        document.getElementById("plusButton").addEventListener("click", increment);
+        document.getElementById("minusButton").addEventListener("click", decrement);
+
     </script>
 </body>
 

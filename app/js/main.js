@@ -95,146 +95,84 @@ $(document).ready(function () {
       CART
     **********************
     **********************/
-  let cartItems = document.querySelectorAll('.cart__list-item');
-  let total = document.getElementById('total');
-  let promocodeInput = document.getElementById('promocode');
+  const items = document.querySelectorAll('.cart__list-item');
 
-  let prices = document.querySelectorAll('.price-num');
+  function cartFn() {
+    items.forEach((item) => {
+      const operators = item.querySelectorAll('.change-button');
+      const prices = item.querySelector('.price-num');
+      let qtys = item.querySelector('.product-qty');
+      let total = document.getElementById('total');
 
-  const submitBtn = document.getElementById('submit');
-  let promo = 'Pencil3000';
-  let numberOfUse = 0;
-  let promoLimit = 1;
-  let promoWasUsed = false;
+      /* Merging all prices of product in total */
+      total.innerText = Number(prices.innerText) + Number(total.innerText);
 
-  let overallPrice = 0;
+      function calculation() {
 
-  console.log(overallPrice)
+        operators.forEach((operator) => {
+          const operatorText = operator.innerText.trim();
 
-  if (submitBtn) {
-    submitBtn.addEventListener('click', (event) => {
-      console.log(numberOfUse)
-      /* Validator for promocode input */
-      if (promocodeInput) {
-        if (numberOfUse >= promoLimit) {
-          alert(`The promocode was used more than ${numberOfUse} time`);
-        } else {
-          /* Promocode */
-          if (promocodeInput.value === promo) {
-            numberOfUse += 1;
-            promoWasUsed = true;
-
-            let percentage = 90;
-            let discount = (Number(total.innerText) / 100) * percentage;
-
-            total.innerText = Number(total.innerText) - Math.round(discount);
-            console.log(discount)
-          } else {
-            alert("Invalid promocode!");
+          /* Product quantity */
+          function qtysFn(whatOperator) {
+            if (whatOperator === '+') {
+              if (Number(qtys.innerText) >= 10) {
+                console.log('I can\'t add thing');
+              } else {
+                qtys.innerText = Number(qtys.innerText) + 1;
+              }
+            } else if (whatOperator === '-') {
+              if (Number(qtys.innerText) <= 0) {
+                console.log('I can\'t remove thing');
+              } else {
+                qtys.innerText = Number(qtys.innerText) - 1;
+              }
+            }
           }
-        }
 
+          /* Product calculation on click */
+          function calcFn(whatOperator) {
+            if (whatOperator === '+') {
+              if (qtys.innerText < 10) {
+                total.innerText = Number(total.innerText) + Number(prices.innerText);
+              } else {
+              }
+            } else if (whatOperator === '-') {
+              if (Number(qtys.innerText) > 0) {
+                total.innerText = Number(total.innerText) - Number(prices.innerText);
+
+                console.log(Number(qtys.innerText));
+              } else {
+                let remove = (prompt('Are you sure you want to remove this item?') === 'Yes') ? item.remove() : ('No') ? qtys.innerText = Number(qtys.innerText) + 1 : qtys.innerText = Number(qtys.innerText) + 1;
+                /* alert(remove) */
+              }
+            }
+          }
+
+          operator.addEventListener('click', function () {
+            if (operatorText === '+') {
+
+              /* Calling calcFn function */
+              calcFn('+');
+              /* Calling qtys function */
+              qtysFn('+');
+              
+            } else if (operatorText === '-') {
+
+              /* Calling calcFn function */
+              calcFn('-');
+              /* Calling qtys function */
+              qtysFn('-');
+
+            }
+          });
+
+        })
       }
+
+      calculation();
     })
   }
 
-
-  /* Inside the cart Items */
-  cartItems.forEach((item, index) => {
-    let operators = item.querySelectorAll('.change-button');
-    let qtys = item.querySelectorAll('.product-qty');
-    let prices = item.querySelectorAll('.price-num');
-
-    let totalSum;
-
-    prices.forEach((price) => {
-      totalSum = Number(total.innerText) + Number(price.innerText);
-      total.innerText = totalSum;
-    })
-
-    operators.forEach((operator) => {
-      let result;
-      let resetTheTotal;
-
-      /* Click event */
-      operator.addEventListener('click', () => {
-
-
-        /*  promoWasUsed = false;
-         numberOfUse = 0; */
-
-
-        /* Checking operators in buttons */
-
-        /* + OPERATOR */
-        if (operator.innerText === '+') {
-          /************ For quantity ************/
-          qtys.forEach((qty) => {
-            /* Limit to 20 */
-            if (qty.innerText >= 20) {
-
-            } else {
-              result = Number(qty.innerText) + 1;
-              qty.innerText = result;
-
-              /*********** For total price ************/
-              prices.forEach((price) => {
-                totalSum = Number(total.innerText) + Number(price.innerText);
-
-                /* 
-                if (promoWasUsed) {
-                  resetTheTotal = Number(qty.innerText) * Number(price.innerText);
-                  console.log(resetTheTotal);
-                  totalSum = Math.round(resetTheTotal);
-                } 
-                */
-
-                total.innerText = totalSum;
-                overallPrice = totalSum;
-                console.log(overallPrice);
-              })
-            }
-          })
-          /* - OPERATOR */
-        } else if (operator.innerText === '-') {
-
-          /************ For quantity ************/
-          qtys.forEach((qty) => {
-
-            /* Limit for items */
-            if (qty.innerText <= 1) {
-            } else {
-              result = Number(qty.innerText) - 1;
-              qty.innerText = result;
-
-              /************ For total price ************/
-              prices.forEach((price) => {
-                totalSum = Number(total.innerText) - Number(price.innerText);
-
-                total.innerText = totalSum
-                overallPrice = totalSum;
-                console.log(overallPrice);
-              })
-            }
-          })
-        } else {
-          console.log("There should be either + or -")
-        }
-      })
-      /*  */
-    })
-
-  })
+  cartFn();
 
 });
-
-function makeUser() {
-  return {
-    name: "John",
-    ref: this
-  };
-}
-
-/* let user = makeUser();
-
-alert(user.ref.name); */
